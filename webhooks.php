@@ -40,8 +40,8 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 			
 			
-	$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($text);
-$response = $bot->pushMessage($idPush, $textMessageBuilder);		
+	//$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($text);
+$response = $bot->pushMessage($text, $textMessageBuilder);		
 
 			// Build message to reply back
 			$messages = [
