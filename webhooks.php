@@ -57,9 +57,9 @@ content['event'],
 // Parse JSON
 $events = json_decode($content, true);
 
-$str = print_r($events, true);
+/*$str = print_r($events, true);
 $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($str);
-$response = $bot->pushMessage($idPush, $textMessageBuilder);
+$response = $bot->pushMessage($idPush, $textMessageBuilder);*/
 
 // Validate parsed JSON data
 if (!is_null($events['events'])) { 
