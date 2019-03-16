@@ -24,8 +24,8 @@ echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
 // Get POST body content
 $content = file_get_contents('php://input');
 
-
-$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($content);
+$str = print_r($content, true);
+$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($str);
 $response = $bot->pushMessage($idPush, $textMessageBuilder);
 
 
