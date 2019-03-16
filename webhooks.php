@@ -73,7 +73,7 @@ if (!is_null($events['events'])) {
 		if($event['message']['text'] == 'abc') //รับ
 		{
 			$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("XYZ"); //ตอบ
-                	//$response = $bot->pushMessage($idPush, $textMessageBuilder);
+                	$response = $bot->pushMessage($idPush, $textMessageBuilder);
 		}
 			$replyToken = "XYZ";
 		
