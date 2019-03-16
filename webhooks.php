@@ -9,7 +9,7 @@ $idPush = 'U41dce961faea3f904c6377f122383327';
 
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
-$str=print_r($bot);
+
 $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("Hello");
 $response = $bot->pushMessage($idPush, $textMessageBuilder);
 
@@ -19,6 +19,8 @@ $response = $bot->pushMessage($idPush, $textMessageBuilder);
 
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
 
+
+/*
 // Get POST body content
 $content = file_get_contents('php://input');
 
@@ -64,5 +66,5 @@ if (!is_null($events['events'])) {
 			echo $result . "\r\n";
 		}
 	}
-}
+}*/
 echo "OK";
