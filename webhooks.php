@@ -20,7 +20,7 @@ $response = $bot->pushMessage($idPush, $textMessageBuilder);
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
 
 
-/*
+
 // Get POST body content
 $content = file_get_contents('php://input');
 
@@ -66,5 +66,5 @@ if (!is_null($events['events'])) {
 			echo $result . "\r\n";
 		}
 	}
-}*/
+}
 echo "OK";
