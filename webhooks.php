@@ -10,7 +10,7 @@ $idPush = 'U41dce961faea3f904c6377f122383327';
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
 $str=print_r($bot);
-$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($channelSecret);
+$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($bot);
 $response = $bot->pushMessage($idPush, $textMessageBuilder);
 
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
