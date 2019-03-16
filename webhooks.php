@@ -27,6 +27,37 @@ $content = file_get_contents('php://input');
 
 
 
+/*
+{
+"events":[
+     {
+       "type":"message",
+       "replyToken":"1cf19778ea854dca9457618c26b89926",
+       "source":
+           {
+          "userId":"U41dce961faea3f904c6377f122383327",
+          "type":"user"
+           },
+	"timestamp":1552725143541,
+        "message":		
+           {
+	 	"type":"text",
+		"id":"9523813032026",
+		"text":"cat"
+            }
+		}],
+		"destination":"U2a981f502a281a2d7fd0915d9cbd72f4"
+}
+
+content['event',
+*/
+
+
+
+
+
+
+
 // Parse JSON
 $events = json_decode($content, true);
 
@@ -41,6 +72,10 @@ if (!is_null($events['events'])) {
 	// Loop through each event
 	foreach ($events['events'] as $event) {
 		// Reply only when message sent is in 'text' format
+		
+		if($event['message']['text'] == 'abc')
+			$replyToken = "XYZ";
+		
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
 			$text = $event['source']['userId'];
