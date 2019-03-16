@@ -24,13 +24,16 @@ echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
 // Get POST body content
 $content = file_get_contents('php://input');
 
-$str = print_r($content, true);
-$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($str);
-$response = $bot->pushMessage($idPush, $textMessageBuilder);
+
 
 
 // Parse JSON
 $events = json_decode($content, true);
+
+$str = print_r($events, true);
+$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($str);
+$response = $bot->pushMessage($idPush, $textMessageBuilder);
+
 echo "11";
 // Validate parsed JSON data
 if (!is_null($events['events'])) { 
