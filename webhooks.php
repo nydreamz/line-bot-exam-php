@@ -20,11 +20,8 @@ $response = $bot->pushMessage($idPush, $textMessageBuilder);
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
 
 
-
 // Get POST body content
 $content = file_get_contents('php://input');
-
-
 
 
 /*
@@ -48,8 +45,7 @@ $content = file_get_contents('php://input');
 		}],
 		"destination":"U2a981f502a281a2d7fd0915d9cbd72f4"
 }
-
-content['event',
+content['event'],
 */
 
 
@@ -65,10 +61,8 @@ $str = print_r($events, true);
 $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($str);
 $response = $bot->pushMessage($idPush, $textMessageBuilder);
 
-echo "11";
 // Validate parsed JSON data
 if (!is_null($events['events'])) { 
-	echo "22";
 	// Loop through each event
 	foreach ($events['events'] as $event) {
 		// Reply only when message sent is in 'text' format
@@ -76,10 +70,10 @@ if (!is_null($events['events'])) {
 		$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($event['message']['text']);
                 $response = $bot->pushMessage($idPush, $textMessageBuilder);
 		
-		if($event['message']['text'] == 'abc')
+		if($event['message']['text'] == 'abc') //รับ
 		{
-			$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("XYZ");
-                       $response = $bot->pushMessage($idPush, $textMessageBuilder);
+			$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("XYZ"); //ตอบ
+                	$response = $bot->pushMessage($idPush, $textMessageBuilder);
 		}
 			$replyToken = "XYZ";
 		
