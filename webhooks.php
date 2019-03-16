@@ -8,8 +8,16 @@ $access_token = 'F3/05oE85ANOViTp2b+3zy7XpmODxFWW1N/Ok2d5A9JYVhvHI2fUJhguBO5DZmb
 $channelSecret = '7027b55573a066bc6deb9f497ea80dc8';
 $idPush = '';
 
+$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
+$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
+$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello world');
+$response = $bot->pushMessage($idPush, $textMessageBuilder);
+
+echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
+
 // Get POST body content
 $content = file_get_contents('php://input');
+
 // Parse JSON
 $events = json_decode($content, true);
 // Validate parsed JSON data
