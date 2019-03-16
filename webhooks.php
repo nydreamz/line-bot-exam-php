@@ -72,9 +72,15 @@ if (!is_null($events['events'])) {
 	// Loop through each event
 	foreach ($events['events'] as $event) {
 		// Reply only when message sent is in 'text' format
-		$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("DOG");
-$response = $bot->pushMessage($idPush, $textMessageBuilder);
+		
+		$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($event['message']['text']);
+                $response = $bot->pushMessage($idPush, $textMessageBuilder);
+		
 		if($event['message']['text'] == 'abc')
+		{
+			$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("XYZ");
+                       $response = $bot->pushMessage($idPush, $textMessageBuilder);
+		}
 			$replyToken = "XYZ";
 		
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
