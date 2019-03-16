@@ -41,7 +41,7 @@ if (!is_null($events['events'])) {
 			
 			
 	//$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($text);
-$response = $bot->pushMessage($text, $textMessageBuilder);		
+$response = $bot->pushMessage($text.'aaa', $textMessageBuilder);		
 
 			// Build message to reply back
 			$messages = [
