@@ -38,12 +38,16 @@ if (!is_null($events['events'])) {
 			$text = $event['source']['userId'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
+			
+			
+	$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($text);
+$response = $bot->pushMessage($idPush, $textMessageBuilder);		
 
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
 				'text' => $text,
-				'xyz'  => 'abc',
+				
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
