@@ -1,7 +1,7 @@
 <?php
 echo "Hello LINE BOT";
 
-$input = "abc";
+/*$input = "abc";
 
 
 if($input == "abc")
@@ -12,7 +12,7 @@ if($input == "def")
   $response = "ijk";
 
 
-echo $response;
+echo $response;*/
 
 <!DOCTYPE html>
 <html lang="en">
